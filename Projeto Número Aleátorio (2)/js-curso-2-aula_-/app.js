@@ -5,7 +5,7 @@ let paragrafo = document.querySelector('p');
 paragrafo.innerHTML = "Escolha um número entre 1 e 10";*/
 
 let listaNumerosSorteados = [];
-let numeroLimite = 50;
+let numeroLimite = 10;
 let numeroSecreto = gerarNumeroAleatorio();
 console.log(numeroSecreto);
 let tentativas = 1;
@@ -22,6 +22,11 @@ function exibirMensagemInicial(){
 function verificarChute() {
     //pego o valor digitado dentro do campo input
      let chute = document.querySelector('input').value;
+
+     if(chute == 0){
+        alert('Favor inserir um valor');
+        return;
+     }
          
      if(chute == numeroSecreto){
         exibirTextoNaTela('h1', "Acertou");
